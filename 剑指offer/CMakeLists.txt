@@ -6,7 +6,9 @@ add_definitions(-g -o2)
 include_directories(${CMAKE_SOURCE_DIR}/)
 
 
-add_executable(001_test ${CMAKE_SOURCE_DIR}/001.cpp)
-add_executable(002_test ${CMAKE_SOURCE_DIR}/002.cpp)
+add_executable(001_test ${CMAKE_SOURCE_DIR}/src/001.cpp)
+add_executable(002_test ${CMAKE_SOURCE_DIR}/src/002.cpp)
+add_executable(003_test ${CMAKE_SOURCE_DIR}/src/003.cpp)
+add_executable(004_test ${CMAKE_SOURCE_DIR}/src/004.cpp)
 
 # install(TARGETS 001_test DESTINATION ${CMAKE_SOURCE_DIR}/bin/)

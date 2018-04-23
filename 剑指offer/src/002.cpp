@@ -1,8 +1,12 @@
 /*
 请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy
+
+AC
+
 */
 
 #include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string>
 #include <string.h>
@@ -12,7 +16,6 @@
 class Solution {
 public:
 	void replaceSpace(char *str,int length) {
-		//当几个空格连续的时候呢？
 		char* dest = new char[length * 3];
 		int count = 0;
 		bool last_is_space = false;
@@ -23,11 +26,11 @@ public:
 			if (str[i] == ' ')
 			{
 				space_count = 1;
-				while(str[i+1] == ' ')
-				{
-					space_count ++;
-					i ++;
-				}
+				// while(str[i+1] == ' ')
+				// {
+				// 	space_count ++;
+				// 	i ++;
+				// }
 				dest[j] = '%';
 				j++;
 				dest[j] = '2';
@@ -41,8 +44,7 @@ public:
 		}
 		dest[j] = '\0';
 		std::cout<<"dest: "<<dest<<std::endl;
-
-		str = (char*)remalloc(j*sizeof(char));
+		// str = (char*)realloc(dest, j*sizeof(char));
 		strcpy(str, dest);
 		std::cout<<"str: "<<str<<std::endl;
 	}
@@ -78,7 +80,7 @@ p[0]='c';                   // 合法但不正确
 参考博客：https://blog.csdn.net/szchtx/article/details/10396149
 
 ////////////////////////////////////////////////////////////////////////////
-这条题目还要求在原来的内存地址上储存改变之后的值，所以我想使用remalloc函数
+这条题目还要求在原来的内存地址上储存改变之后的值，所以我想使用realloc函数, 但是使用realloc会出现奇怪的错误
 ////////////////////////////////////////////////////////////////////////////
 */
 
