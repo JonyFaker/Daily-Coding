@@ -48,6 +48,52 @@ public:
 		strcpy(str, dest);
 		std::cout<<"str: "<<str<<std::endl;
 	}
+
+	// 使用两个指针,从后往前，时 空 O(n),需要保证string分配足够的空间
+	void replaceSpace_2(char string[], int length){
+		if (string == nullptr || length <= 0)
+		{
+			return;
+		}
+
+		int originLength = 0;
+		int numberBlank = 0;
+		int i = 0;
+		while(string[i] != '\0')
+		{
+			++originLength;
+			if (string[i] == ' ')
+			{
+				++numberBlank;
+			}
+			i++;
+		}
+
+		int newLength = originLength + numberBlank*2;
+		if (newLength > length)
+		{
+			return;
+		}
+
+		int indexOrigin = originLength;
+		int indexNew = newLength;
+		while(indexOrigin >= 0 && indexNew > indexOrigin)
+		{
+			if (string[indexOrigin] == ' ')
+			{
+				string[indexNew --] = '0';
+				string[indexNew --] = '2';
+				string[indexNew --] = '%';
+			}
+			else
+			{
+				string[indexNew --] = string[indexOrigin];
+			}
+
+			--indexOrigin;
+		}
+
+	}
 };
 
 
@@ -59,6 +105,13 @@ int main(int argc, char const *argv[])
 	printf("str length: %d \n", strlen(str));
 	sulotion->replaceSpace(str, strlen(str));
 	std::cout<<str<<std::endl;
+
+	//version2
+	std::cout<<"solution 2:"<<std::endl;
+	const int length = 30;
+	char string[length] = "hello  world ! ";
+	sulotion->replaceSpace_2(string, length);
+	std::cout<<string<<std::endl;
 	return 0;
 }
 
