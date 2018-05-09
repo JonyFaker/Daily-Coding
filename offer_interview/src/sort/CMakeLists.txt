@@ -19,5 +19,6 @@ add_executable(shellSort_test ${CMAKE_SOURCE_DIR}/O_NlogN/shellSort.cpp)
 
 #### O(N)
 add_executable(countingSort_test ${CMAKE_SOURCE_DIR}/O_N/countingSort.cpp)
+add_executable(radixSort_test ${CMAKE_SOURCE_DIR}/O_N/radixSort.cpp)
 
 # install(TARGETS 001_test DESTINATION ${CMAKE_SOURCE_DIR}/bin/)
