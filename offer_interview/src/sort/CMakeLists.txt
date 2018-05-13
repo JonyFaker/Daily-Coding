@@ -21,4 +21,12 @@ add_executable(shellSort_test ${CMAKE_SOURCE_DIR}/O_NlogN/shellSort.cpp)
 add_executable(countingSort_test ${CMAKE_SOURCE_DIR}/O_N/countingSort.cpp)
 add_executable(radixSort_test ${CMAKE_SOURCE_DIR}/O_N/radixSort.cpp)
 
+#### excise
+add_executable(scaleSort_test ${CMAKE_SOURCE_DIR}/excise/scaleSort.cpp)
+add_executable(checkRepeat_test ${CMAKE_SOURCE_DIR}/excise/checkRepeat.cpp)
+add_executable(merge_test ${CMAKE_SOURCE_DIR}/excise/merge.cpp)
+add_executable(threeColor_test ${CMAKE_SOURCE_DIR}/excise/threeColor.cpp)
+add_executable(subSequence_test ${CMAKE_SOURCE_DIR}/excise/subSequence.cpp)
+add_executable(maxGap_test ${CMAKE_SOURCE_DIR}/excise/maxGap.cpp)
+
 # install(TARGETS 001_test DESTINATION ${CMAKE_SOURCE_DIR}/bin/)

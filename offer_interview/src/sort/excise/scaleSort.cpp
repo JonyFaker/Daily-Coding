@@ -13,7 +13,38 @@ public:
     ~scaleSort(){delete[] arr; arr=NULL;}
     
     int* scalesort(){
-        
+        int* result = new int[length];
+        //先将0~k-1位置上的数字调整为小根堆
+        for (int i = k/2-1; i >= 0; --i)
+            MinHeapInit(arr, i, k-1);
+        result[0] = arr[0];
+        cout<<result[0]<<" ";
+        //依次将k-1之后的数字插入堆顶，再调整为小根堆
+        for (int i = k, j = 1; i < length; ++i,++j)
+        {
+            //将下一个数插入到堆顶，再进行调整
+            arr[0] = arr[i];
+            MinHeapInit(arr, 0, k-1);
+            for (int temp = 0; temp < length; ++temp)
+            {
+                cout<<arr[temp]<<" ";
+            }
+            cout<<endl;
+            result[j] = arr[0];
+            // cout<<result[j]<<" ";
+        }
+        cout<<endl;
+        //到此刻，前k-1个从小到大的数字已经找到，由小根堆的性质可以知道，arr[0]作为堆顶，此时他的子节点一定比他大
+        //所以，进行一次调整并将最小值放到堆顶
+        heapsort(arr, k);
+        result[length-1] = arr[0];
+        for (int i = 0; i < length; ++i)
+        {
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+
+        return result;
     }
 
 
@@ -58,6 +89,14 @@ int main(int argc, char const *argv[])
 {
     int arr[]={2,1,4,3,6,5,8,7,10,9};  //几乎有序，如果把这个数组排好序的话，每个元素移动的距离不超过K，使用改进堆排序
     int length = sizeof(arr)/sizeof(int);
-    int k = 10;
+    int k = 3;
+    scaleSort* scalesort = new scaleSort(arr, length, k);
+    int* result = scalesort->scalesort();
+    cout<<"result: ";
+    for (int i = 0; i < length; ++i)
+    {
+        cout<<result[i]<<" ";
+    }
+    cout<<endl;
     return 0;
 }
