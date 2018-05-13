@@ -9,5 +9,7 @@ include_directories(${CMAKE_SOURCE_DIR}/)
 add_executable(TransForm_test ${CMAKE_SOURCE_DIR}/TransForm.cpp)
 add_executable(rotationString_test ${CMAKE_SOURCE_DIR}/rotationString.cpp)
 add_executable(reverseStr_test ${CMAKE_SOURCE_DIR}/reverseStr.cpp)
+add_executable(translation_test ${CMAKE_SOURCE_DIR}/translation.cpp)
+add_executable(Prior_test ${CMAKE_SOURCE_DIR}/Prior.cpp)
 
 # install(TARGETS 001_test DESTINATION ${CMAKE_SOURCE_DIR}/bin/)
