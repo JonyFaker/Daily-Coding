@@ -10,5 +10,8 @@ add_executable(twoStack_test ${CMAKE_SOURCE_DIR}/twoStack.cpp)
 add_executable(stackReverse_test ${CMAKE_SOURCE_DIR}/stackReverse.cpp)
 add_executable(stackSort_test ${CMAKE_SOURCE_DIR}/stackSort.cpp)
 
+add_executable(window_test ${CMAKE_SOURCE_DIR}/window.cpp)
+add_executable(maxTree_test ${CMAKE_SOURCE_DIR}/maxTree.cpp)
+
 
 # install(TARGETS 001_test DESTINATION ${CMAKE_SOURCE_DIR}/bin/)
