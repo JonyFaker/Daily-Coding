@@ -15,6 +15,8 @@ add_executable(palin_test ${CMAKE_SOURCE_DIR}/palin.cpp)
 
 
 add_executable(radomList_test ${CMAKE_SOURCE_DIR}/radomList.cpp)
-
+add_executable(cycleList_test ${CMAKE_SOURCE_DIR}/cycleList.cpp)
+add_executable(checkIntersect_test ${CMAKE_SOURCE_DIR}/checkIntersect.cpp)
+add_executable(checkIntersect_v2_test ${CMAKE_SOURCE_DIR}/checkIntersect_v2.cpp)
 
 # install(TARGETS 001_test DESTINATION ${CMAKE_SOURCE_DIR}/bin/)
